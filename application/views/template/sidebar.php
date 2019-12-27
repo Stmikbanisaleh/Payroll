@@ -42,11 +42,38 @@
 		<b class="arrow"></b>
 	</li>
 
+	<li class="">
+		<a href="javascript:void(0);" class="dropdown-toggle">
+			<i class="menu-icon fa fa-credit-card"></i>
+			<span class="menu-text">
+				Teacher's Bio
+			</span>
+		</a>
+	</li>
+
+	<li class="">
+		<a href="javascript:void(0);" class="dropdown-toggle">
+			<i class="menu-icon fa fa-users"></i>
+			<span class="menu-text">
+				Employee
+			</span>
+		</a>
+	</li>
+
+	<li class="">
+		<a href="javascript:void(0);" class="dropdown-toggle">
+			<i class="menu-icon glyphicon glyphicon-refresh"></i>
+			<span class="menu-text">
+				Syncronize
+			</span>
+		</a>
+	</li>
+
 	<li class="active">
 		<a href="javascript:void(0);" class="dropdown-toggle">
-			<i class="menu-icon fa fa-desktop"></i>
+			<i class="menu-icon glyphicon glyphicon-download"></i>
 			<span class="menu-text">
-				Master Data
+				Earning
 			</span>
 
 			<b class="arrow fa fa-angle-down"></b>
@@ -55,6 +82,7 @@
 		<b class="arrow"></b>
 
 		<ul class="submenu">
+
 			<li class="">
 				<a href="<?= base_url().'guru';?>">
 					<i class="menu-icon fa fa-caret-right"></i>
@@ -85,39 +113,49 @@
 
 	<li class="">
 		<a href="javascript:void(0);" class="dropdown-toggle">
-			<i class="menu-icon fa fa-desktop"></i>
+			<i class="menu-icon glyphicon glyphicon-upload"></i>
 			<span class="menu-text">
-				Menu 2
+				Deduction
 			</span>
+
+			<b class="arrow fa fa-angle-down"></b>
 		</a>
+
+		<b class="arrow"></b>
+
+		<ul class="submenu">
+
+			<li class="">
+				<a href="typography.html">
+					<i class="menu-icon fa fa-caret-right"></i>
+					Employee
+				</a>
+
+				<b class="arrow"></b>
+			</li>
+
+			<li class="">
+				<a href="typography.html">
+					<i class="menu-icon fa fa-caret-right"></i>
+					Teacher's
+				</a>
+
+				<b class="arrow"></b>
+			</li>
+			
+		</ul>
 	</li>
 
 	<li class="">
 		<a href="javascript:void(0);" class="dropdown-toggle">
-			<i class="menu-icon fa fa-desktop"></i>
+			<i class="menu-icon fa fa-info-circle"></i>
 			<span class="menu-text">
-				Menu 3
+				Serve / Leave
 			</span>
 		</a>
 	</li>
 
-	<li class="">
-		<a href="javascript:void(0);" class="dropdown-toggle">
-			<i class="menu-icon fa fa-desktop"></i>
-			<span class="menu-text">
-				Mwnu 4
-			</span>
-		</a>
-	</li>
-
-	<li class="">
-		<a href="javascript:void(0);" class="dropdown-toggle">
-			<i class="menu-icon fa fa-desktop"></i>
-			<span class="menu-text">
-				Menu 5
-			</span>
-		</a>
-	</li>
+	
 </ul><!-- /.nav-list -->
 
 <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
