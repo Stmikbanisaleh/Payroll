@@ -56,46 +56,25 @@
 
 		<ul class="submenu">
 			<li class="">
-				<a href="javascript:void(0);" class="dropdown-toggle">
+				<a href="<?= base_url().'guru';?>">
 					<i class="menu-icon fa fa-caret-right"></i>
-					People
-					<b class="arrow fa fa-angle-down"></b>
+					Guru
+				</a>
+			</li>
+
+			<li class="">
+				<a href="<?= base_url().'karyawan'; ?>">
+					<i class="menu-icon fa fa-caret-right"></i>
+					Karyawan
 				</a>
 
 				<b class="arrow"></b>
-
-				<ul class="submenu">
-					<li class="">
-						<a href="top-menu.html">
-							<i class="menu-icon fa fa-caret-right"></i>
-							Administrator
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-					<li class="">
-						<a href="top-menu.html">
-							<i class="menu-icon fa fa-caret-right"></i>
-							Employee
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-					<li class="">
-						<a href="top-menu.html">
-							<i class="menu-icon fa fa-caret-right"></i>
-							Teacher
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-				</ul>
 			</li>
 
 			<li class="">
 				<a href="typography.html">
 					<i class="menu-icon fa fa-caret-right"></i>
-					Typography
+					Role
 				</a>
 
 				<b class="arrow"></b>
