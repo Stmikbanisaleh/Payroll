@@ -22,7 +22,7 @@
 <!-- page specific plugin scripts -->
 
 <!--[if lte IE 8]>
-  <script src="<?= base_url() ?>assets/template/js/excanvas.min.js"></script>
+<script src="<?= base_url() ?>assets/template/js/excanvas.min.js"></script>
 <![endif]-->
 <script src="<?= base_url() ?>assets/template/js/jquery-ui.custom.min.js"></script>
 <script src="<?= base_url() ?>assets/template/js/jquery.ui.touch-punch.min.js"></script>
@@ -38,5 +38,22 @@
 
 <!-- Sweet alert2 -->
 <script src="<?= base_url() ?>assets/template/sweetalert2/sweetalert2.all.min.js"></script>
+<script type="text/javascript">
+  function swalSuccess(){
+		Swal.fire({
+		  icon: 'success',
+		  title: 'Sukses',
+		  text: 'Tambah Guru Berhasil',
+		});
+	}
+
+	function swalFailed(){
+		Swal.fire({
+		  icon: 'error',
+		  title: 'Gagal',
+		  text: 'Input Data gagal!',
+		});
+	}
+</script>
 
 <!-- inline scripts related to this page -->

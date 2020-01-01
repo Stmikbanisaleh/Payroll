@@ -131,6 +131,8 @@
 		$('#table_id').DataTable();
 	});
 
+	
+
 	//Simpan guru
 	$('#btn_simpan').on('click', function() {
 		var nik = $('#nik').val();
@@ -155,11 +157,10 @@
 				riwayat_sertifikasi: riwayat_sertifikasi,
 			},
 			success: function(data) {
-				console.log(data);
-				alert('jembut');
 				$('#my-modal').modal('hide');
+				swalSuccess();
 				show_data();
-			}
+			} 
 		});
 		return false;
 	});
