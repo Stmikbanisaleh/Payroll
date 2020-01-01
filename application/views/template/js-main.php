@@ -43,7 +43,7 @@
 		Swal.fire({
 		  icon: 'success',
 		  title: 'Sukses',
-		  text: 'Tambah Guru Berhasil',
+		  text: 'Tambah Data Berhasil',
 		});
 	}
 
@@ -51,7 +51,7 @@
 		Swal.fire({
 		  icon: 'error',
 		  title: 'Gagal',
-		  text: 'Input Data gagal!',
+		  text: 'Tambah Data gagal!',
 		});
 	}
 </script>
