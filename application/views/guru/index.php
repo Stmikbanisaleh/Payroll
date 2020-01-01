@@ -112,7 +112,7 @@
 		</div>
 	</div>
 </div>
-<table id="table_id" class="display">
+<table id="datatable_tabletools" class="display">
 	<thead>
 		<tr>
 			<th>Nama Guru</th>
@@ -128,7 +128,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		show_data();
-		$('#table_id').DataTable();
+		$('#datatable_tabletools').DataTable();
 	});
 
 	
