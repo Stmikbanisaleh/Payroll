@@ -7,15 +7,13 @@
 <!--[if IE]>
 <script src="<?= base_url() ?>assets/template/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
-<!-- <script src="<?= base_url() ?>assets/template/js/jquery-2.1.4.min.js"></script> -->
-<script
-  src="https://code.jquery.com/jquery-2.2.4.js"
-  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-  crossorigin="anonymous"></script>
+<script src="<?= base_url() ?>assets/template/js/jquery-2.1.4.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-2.2.4.js"></script> -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	if ('ontouchstart' in document.documentElement) document.write("<script src='<?= base_url() ?>assets/template/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
-</script>
+</script> -->
 <script src="<?= base_url() ?>assets/template/js/bootstrap.min.js"></script>
 
 <!-- page specific plugin scripts -->
@@ -32,13 +30,7 @@
 <script src="<?= base_url() ?>assets/template/js/jquery.flot.resize.min.js"></script>
 <!-- ace scripts -->
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
-
-<script src="<?= base_url() ?>assets/template/js/ace-elements.min.js"></script>
-<script src="<?= base_url() ?>assets/template/js/ace.min.js"></script>
+<!-- <script src="<?= base_url() ?>assets/template/js/ace-elements.min.js"></script>
+<script src="<?= base_url() ?>assets/template/js/ace.min.js"></script> -->
 
 <!-- inline scripts related to this page -->
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('#table_id').DataTable();
-	});
-</script>

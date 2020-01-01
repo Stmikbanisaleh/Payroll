@@ -12,7 +12,6 @@ class Dashboard extends CI_Controller {
         			'page_content' 	=> 'dashboard',
         			'ribbon' 		=> '<li class="active">Dashboard</li><li>Sample</li>',
         			'page_name' 	=> 'Dashboard',
-        			'js' 			=> 'js_file'
         		);
         $this->render_view($data); //Memanggil function render_view
     }

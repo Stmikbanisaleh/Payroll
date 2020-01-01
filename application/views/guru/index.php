@@ -12,7 +12,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h3 class="smaller lighter blue no-margin">A modal with a slider in it!</h3>
+				<h3 class="smaller lighter blue no-margin">Form Input Data Guru</h3>
 			</div>
 			<div class="modal-body">
 				<div class="row">
@@ -23,37 +23,83 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> NIK </label>
 								<div class="col-sm-6">
-									<input type="text" name="nik" id="form-field-1" placeholder="NIK" class="form-control" />
+									<input type="text" id="nik" name="nik" id="form-field-1" placeholder="NIK" class="form-control" />
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nama </label>
 								<div class="col-sm-9">
-									<input type="text" id="form-field-1" placeholder="Nama Guru" class="form-control" />
+									<input type="text" id="nama" name="nama" placeholder="Nama Guru" class="form-control" />
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Jabatan </label>
 								<div class="col-sm-9">
-									<input type="text" id="form-field-1" name="jabatan" class="form-control" />
+									<select class="form-control" name="jabatan" id="jabatan">
+										<option value="Select Option">Pilih-Jabatan</option>
+										<option value="AL">Alabama</option>
+										<option value="AK">Alaska</option>
+										<option value="AZ">Arizona</option>
+										<option value="AR">Arkansas</option>
+									</select>
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Jabatan </label>
+								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Alamat </label>
 								<div class="col-sm-9">
-									<input type="text" id="form-field-1" name="jabatan" class="form-control" />
+									<textarea class="form-control" name="alamat" id="alamat" placeholder="Default Text"></textarea>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Riwayat Pendidikan </label>
+								<div class="col-sm-7">
+									<input type="text" id="riwayat_pendidikan" name="riwayat_pendidikan" placeholder="Riwayat Pendidikan" class="form-control" />
+								</div>
+								<div class="col-sm-1">
+									<button class="btn btn-xs btn-info">
+										<i class="ace-icon fa fa-plus bigger-120"></i>
+									</button>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Riwayat Seminar </label>
+								<div class="col-sm-7">
+									<input type="text" id="riwayat_seminar" name="riwayat_seminar" placeholder="Nama Guru" class="form-control" />
+								</div>
+								<div class="col-sm-1">
+									<button class="btn btn-xs btn-info">
+										<i class="ace-icon fa fa-plus bigger-120"></i>
+									</button>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Riwayat Sertifikasi </label>
+								<div class="col-sm-7">
+									<input type="text" id="riwayat_sertifikasi" name="riwayat_sertifikasi" placeholder="Riwayat Sertifikasi" class="form-control" />
+								</div>
+								<div class="col-sm-1">
+									<button class="btn btn-xs btn-info">
+										<i class="ace-icon fa fa-plus bigger-120"></i>
+									</button>
 								</div>
 							</div>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-sm btn-danger pull-right" data-dismiss="modal">
+				<button id="btn_simpan" class="btn btn-sm btn-success pull-left" data-dismiss="modal">
+					<i class="ace-icon fa fa-save"></i>
+					Simpan
+				</button>
+				<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
 					<i class="ace-icon fa fa-times"></i>
-					Close
+					Batal
 				</button>
 			</div>
 		</div><!-- /.modal-content -->
@@ -104,3 +150,41 @@
 		</tr>
 	</tbody>
 </table>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#table_id').DataTable();
+	});
+
+	//Simpan guru
+	$('#btn_simpan').on('click', function() {
+		var nik = $('#nik').val();
+		var nama = $('#nama').val();
+		var jabatan = $('#jabatan').val();
+		var alamat = $('#alamat').val();
+		var Jabatan = $('#jabatan').val();
+		var riwayat_pendidikan = $('#riwayat_pendidikan').val();
+		var riwayat_seminar = $('#riwayat_seminar').val();
+		var riwayat_sertifikasi = $('#riwayat_sertifikasi').val();
+		$.ajax({
+			type: "POST",
+			url: "<?php echo base_url('guru/simpan_guru') ?>",
+			dataType: "JSON",
+			data: {
+				nik: nik,
+				nama: nama,
+				jabatan: jabatan,
+				alamat: alamat,
+				riwayat_pendidikan: riwayat_pendidikan,
+				riwayat_seminar: riwayat_seminar,
+				riwayat_sertifikasi: riwayat_sertifikasi,
+			},
+			success: function(data) {
+				console.log(data);
+				alert('jembut');
+				$('#my-modal').modal('hide');
+				tampil_data();
+			}
+		});
+		return false;
+	});
+</script>
