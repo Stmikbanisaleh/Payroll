@@ -4,9 +4,9 @@
 
 <!-- <![endif]-->
 
-<!--[if IE]>
+[if IE]>
 <script src="<?= base_url() ?>assets/template/js/jquery-1.11.3.min.js"></script>
-<![endif]-->
+<![endif]
 <script src="<?= base_url() ?>assets/template/js/jquery-2.1.4.min.js"></script>
 <!-- <script src="https://code.jquery.com/jquery-2.2.4.js"></script> -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
@@ -30,7 +30,10 @@
 <script src="<?= base_url() ?>assets/template/js/jquery.flot.resize.min.js"></script>
 <!-- ace scripts -->
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
-<!-- <script src="<?= base_url() ?>assets/template/js/ace-elements.min.js"></script>
-<script src="<?= base_url() ?>assets/template/js/ace.min.js"></script> -->
+<script src="<?= base_url() ?>assets/template/js/ace-elements.min.js"></script>
+<script src="<?= base_url() ?>assets/template/js/ace.min.js"></script>
+
+<!-- Sweet alert2 -->
+<script src="<?= base_url() ?>assets/template/sweetalert2/sweetalert2.all.min.js"></script>
 
 <!-- inline scripts related to this page -->
