@@ -100,6 +100,15 @@
 			</li>
 
 			<li class="">
+				<a href="<?= base_url().'jabatan'; ?>">
+					<i class="menu-icon fa fa-caret-right"></i>
+					Jabatan
+				</a>
+
+				<b class="arrow"></b>
+			</li>
+
+			<li class="">
 				<a href="typography.html">
 					<i class="menu-icon fa fa-caret-right"></i>
 					Role
