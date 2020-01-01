@@ -73,7 +73,7 @@
 		<a href="javascript:void(0);" class="dropdown-toggle">
 			<i class="menu-icon glyphicon glyphicon-download"></i>
 			<span class="menu-text">
-				Earning
+				Master Data
 			</span>
 
 			<b class="arrow fa fa-angle-down"></b>

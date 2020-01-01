@@ -10,8 +10,8 @@ class Guru extends CI_Controller {
 	public function index() {
         $data = array(
         			'page_content' 	=> '../guru/index',
-        			'ribbon' 		=> '<li class="active">Dashboard</li><li>Sample</li>',
-        			'page_name' 	=> 'Dashboard',
+        			'ribbon' 		=> '<li class="active">Dashboard</li><li>Master Guru</li>',
+        			'page_name' 	=> 'Master Guru',
         			'js' 			=> 'js_file'
         		);
         $this->render_view($data); //Memanggil function render_view

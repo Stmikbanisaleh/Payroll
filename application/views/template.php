@@ -52,7 +52,7 @@
 							<!-- <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
 								<i class="ace-icon fa fa-cog bigger-130"></i>
 							</div> -->
-							<div class="alert alert-info" style="height: 40px; padding: 7px; margin: 5px; margin-top: 0px">
+							<!-- <div class="alert alert-info" style="height: 40px; padding: 7px; margin: 5px; margin-top: 0px">
 								<button type="button" class="close" data-dismiss="alert">
 									<i class="ace-icon fa fa-times"></i>
 								</button>
@@ -63,7 +63,7 @@
 
 								Input data master employee &nbsp
 								<br />
-							</div>
+							</div> -->
 						</div><!-- /.ace-settings-container -->
 
 						<div class="page-header">

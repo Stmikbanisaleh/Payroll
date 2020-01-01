@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="<?= base_url() ?>assets/template/css/bootstrap.min.css" />
 <link rel="stylesheet" href="<?= base_url() ?>assets/template/font-awesome/4.5.0/css/font-awesome.min.css" />
 
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+
 <!-- page specific plugin styles -->
 
 <!-- text fonts -->
