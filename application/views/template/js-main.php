@@ -36,4 +36,7 @@
 <script src="<?= base_url() ?>assets/template/js/ace-elements.min.js"></script>
 <script src="<?= base_url() ?>assets/template/js/ace.min.js"></script>
 
+<!-- Sweet alert2 -->
+<script src="<?= base_url() ?>assets/template/sweetalert2/sweetalert2.all.min.js"></script>
+
 <!-- inline scripts related to this page -->
