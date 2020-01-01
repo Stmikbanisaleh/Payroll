@@ -4,7 +4,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Guru extends CI_Controller
 {
 
-	private function _cunstruct(){
+	private function _cunstruct()
+	{
 		$this->load->model('guru');
 	}
 
@@ -15,13 +16,14 @@ class Guru extends CI_Controller
 
 	public function index()
 	{
+		$my_data = $this->db->get('guru')->result_array();
 		$data = array(
 			'page_content' 	=> '../guru/index',
 			'ribbon' 		=> '<li class="active">Dashboard</li><li>Master Guru</li>',
 			'page_name' 	=> 'Master Guru',
-			'js' 			=> 'js_file'
+			'js' 			=> 'js_file',
+			'mydata' 		=> $my_data
 		);
-	
 		$this->render_view($data); //Memanggil function render_view
 	}
 
@@ -34,6 +36,16 @@ class Guru extends CI_Controller
 			'alamat' => $this->input->post('alamat'),
 		);
 		$result = $this->db->insert('guru', $data);
-		return $result;	
+		if ($result) {
+			echo $result;
+		} else {
+			echo 'insert gagal';
+		}
+	}
+
+	public function tampil_guru()
+	{
+		$my_data = $this->db->get('guru')->result_array();
+		echo json_encode($my_data);
 	}
 }

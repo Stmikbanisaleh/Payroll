@@ -23,14 +23,14 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> NIK </label>
 								<div class="col-sm-6">
-									<input type="text" id="nik" name="nik" id="form-field-1" placeholder="NIK" class="form-control" />
+									<input type="text" id="nik" required name="nik" id="form-field-1" placeholder="NIK" class="form-control" />
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nama </label>
 								<div class="col-sm-9">
-									<input type="text" id="nama" name="nama" placeholder="Nama Guru" class="form-control" />
+									<input type="text" id="nama" required name="nama" placeholder="Nama Guru" class="form-control" />
 								</div>
 							</div>
 
@@ -50,7 +50,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Alamat </label>
 								<div class="col-sm-9">
-									<textarea class="form-control" name="alamat" id="alamat" placeholder="Default Text"></textarea>
+									<textarea class="form-control" required name="alamat" id="alamat" placeholder="Default Text"></textarea>
 								</div>
 							</div>
 
@@ -122,36 +122,12 @@
 			<th>Action</th>
 		</tr>
 	</thead>
-	<tbody>
-		<tr>
-			<td>Row 1 Data 1</td>
-			<td>Row 1 Data 1</td>
-			<td>Row 1 Data 1</td>
-			<td>Row 1 Data 1</td>
-			<td>
-				<div class="hidden-sm hidden-xs btn-group">
-					<button class="btn btn-xs btn-success">
-						<i class="ace-icon fa fa-check bigger-120"></i>
-					</button>
-
-					<button class="btn btn-xs btn-info">
-						<i class="ace-icon fa fa-pencil bigger-120"></i>
-					</button>
-
-					<button class="btn btn-xs btn-danger">
-						<i class="ace-icon fa fa-trash-o bigger-120"></i>
-					</button>
-
-					<button class="btn btn-xs btn-warning">
-						<i class="ace-icon fa fa-flag bigger-120"></i>
-					</button>
-				</div>
-			</td>
-		</tr>
+	<tbody id="show_data">
 	</tbody>
 </table>
 <script type="text/javascript">
 	$(document).ready(function() {
+		show_data();
 		$('#table_id').DataTable();
 	});
 
@@ -182,9 +158,51 @@
 				console.log(data);
 				alert('jembut');
 				$('#my-modal').modal('hide');
-				tampil_data();
+				show_data();
 			}
 		});
 		return false;
 	});
+
+	//function show all Data
+	function show_data() {
+		$.ajax({
+			type: 'ajax',
+			url: '<?php echo site_url('guru/tampil_guru') ?>',
+			async: true,
+			dataType: 'json',
+			success: function(data) {
+				var html = '';
+				var i = 0;
+				var no = 1;
+				for (i = 0; i < data.length; i++) {
+					html += '<tr>' +
+						'<td class="text-center">' + no + '</td>' +
+						'<td>' + data[i].nama + '</td>' +
+						'<td>' + data[i].nama + '</td>' +
+						'<td>' + data[i].jabatan + '</td>' +
+						'<td class="text-center">' +
+						'<a href="javascript:void(0);" class="btn bg-color-green btn-sm item_edit txt-color-white" data-kode="' + data[i].id + '" ><i class="fa fa-pencil-square-o fa-lg"></i></a>' + ' ' +
+						'<a href="javascript:void(0);" class="btn bg-color-red btn-sm item_delete txt-color-white" data-kode="' + data[i].id + '"><i class="fa fa-trash-o fa-lg"></i></a>' +
+						'</td>' +
+						'</tr>';
+					no++;
+				}
+				$("#datatable_tabletools").dataTable().fnDestroy();
+				var a = $('#show_data').html(html);
+				//                    $('#mydata').dataTable();
+				if (a) {
+					$('#datatable_tabletools').dataTable({
+						"bPaginate": true,
+						"bLengthChange": false,
+						"bFilter": true,
+						"bInfo": false,
+						"bAutoWidth": false
+					});
+				}
+				/* END TABLETOOLS */
+			}
+
+		});
+	}
 </script>
