@@ -48,6 +48,7 @@ class Jabatan extends CI_Controller {
             $data = array(
                 'id'  => $this->input->post('id'),
                 'nama'  => $this->input->post('nama'),
+                'createdAt' => date('Y-m-d H:i:s'),
             );
             $action = $this->model_jabatan->insert($data,'jabatan');
             echo json_encode($action);
@@ -64,6 +65,20 @@ class Jabatan extends CI_Controller {
         );
         $data = array(
             'nama'  => $this->input->post('e_nama'),
+            'updatedAt' => date('Y-m-d H:i:s'),
+        );
+        $action = $this->model_jabatan->update($data_id,$data,'jabatan');
+        echo json_encode($action);
+        
+    }
+
+    public function delete_jabatan()
+    {
+        $data_id = array(
+            'id'  => $this->input->post('id')
+        );
+        $data = array(
+            'isdeleted'  => 1,
         );
         $action = $this->model_jabatan->update($data_id,$data,'jabatan');
         echo json_encode($action);

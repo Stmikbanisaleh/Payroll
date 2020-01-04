@@ -19,6 +19,8 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<!-- PAGE CONTENT BEGINS -->
+							
+
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Kode Jabatan </label>
 									<div class="col-sm-6">
@@ -214,7 +216,7 @@
 						swalInputSuccess();
 						show_data();
 						$('#modalTambah').modal('hide');
-					}else if(response == 1048){
+					}else if(response == 401){
 						swalIdDouble('Kode Jabatan Sudah digunakan!');
 					}else{
 						swalInputFailed();
@@ -303,7 +305,7 @@ if ($("#formEdit").length > 0) {
 						'<button  href="#my-modal-edit" class="btn btn-xs btn-info item_edit" title="Edit" data-id="' + data[i].id + '">'+
 							'<i class="ace-icon fa fa-pencil bigger-120"></i>'+
 						'</button> &nbsp'+
-						'<button class="btn btn-xs btn-danger item_hapus" title="Delete" data-kode="' + data[i].id + '">'+
+						'<button class="btn btn-xs btn-danger item_hapus" title="Delete" data-id="' + data[i].id + '">'+
 							'<i class="ace-icon fa fa-trash-o bigger-120"></i>'+
 						'</button>'+
 						'</td>' +
@@ -354,22 +356,36 @@ if ($("#formEdit").length > 0) {
 
     $('#show_data').on('click','.item_hapus',function(){
         var id    = $(this).data('id');
-       swal.fire({
-		  title: "Are you sure?",
-		  text: "Once deleted, you will not be able to recover this imaginary file!",
-		  icon: "warning",
-		  buttons: true,
-		  dangerMode: true,
-		})
-		.then((willDelete) => {
-		  if (willDelete) {
-		    swal("Poof! Your imaginary file has been deleted!", {
-		      icon: "success",
-		    });
-		  } else {
-		    swal("Your imaginary file is safe!");
+       Swal.fire({
+		  title: 'Apakah anda yakin?',
+		  text: "Anda tidak akan dapat mengembalikan ini!",
+		  icon: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  confirmButtonText: 'Ya, Hapus!',
+		  cancelButtonText: 'Batal'
+		}).then((result) => {
+		  if (result.value) {
+		  	$.ajax({
+				type: "POST",
+				url: "<?php echo base_url('jabatan/delete_jabatan') ?>",
+				async: true,
+				dataType: "JSON",
+				data: {
+					id: id,
+				},
+				success: function(data) {
+					show_data();
+					Swal.fire(
+				      'Terhapus!',
+				      'Data sudah dihapus.',
+				      'success'
+				    )
+				}
+			});
 		  }
-		});
+		})
     })
 
 
