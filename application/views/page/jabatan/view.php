@@ -218,7 +218,7 @@
 					show_data();
 					$('#modalTambah').modal('hide');
 				}else if(response == 1048){
-					swalIdDouble('ID Jabatan Sudah digunakan!');
+					swalIdDouble('Kode Jabatan Sudah digunakan!');
 				}else{
 					swalInputFailed();
 				}
