@@ -80,7 +80,7 @@
 	function swalIdDouble(message){
 		Swal.fire({
 		  icon: 'error',
-		  title: 'Gagal',
+		  title: 'Data Duplicate',
 		  text: message,
 		});
 	}

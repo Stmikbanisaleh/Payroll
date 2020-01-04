@@ -157,29 +157,6 @@
 		</tr>
 	</thead>
 	<tbody id="show_data">
-		<!-- <tr>
-			<td>G2015001</td>
-			<td>Guru Honorer</td>
-			<td>
-				<div class="hidden-sm hidden-xs btn-group">
-					<button class="btn btn-xs btn-success">
-						<i class="ace-icon fa fa-check bigger-120"></i>
-					</button>
-
-					<button class="btn btn-xs btn-info" title="Edit">
-						<i class="ace-icon fa fa-pencil bigger-120"></i>
-					</button>
-
-					<button class="btn btn-xs btn-danger" title="Delete">
-						<i class="ace-icon fa fa-trash-o bigger-120"></i>
-					</button>
-
-					<button class="btn btn-xs btn-warning">
-						<i class="ace-icon fa fa-flag bigger-120"></i>
-					</button>
-				</div>
-			</td>
-		</tr> -->
 	</tbody>
 </table>
 <script>
@@ -354,15 +331,15 @@ if ($("#formEdit").length > 0) {
 	}
 
 	//show modal tambah
-	$('#item-tambah').on('click',function(){
-        $('#modalTambah').modal('show');
-    });
+	$('#item-tambah').on('click', function() {
+		$('#modalTambah').modal('show');
+	});
 
 	//get data for update record
-    $('#show_data').on('click','.item_edit',function(){
-        var id    = $(this).data('id');
-        $('#modalEdit').modal('show');
-        $.ajax({
+	$('#show_data').on('click', '.item_edit', function() {
+		var id = $(this).data('id');
+		$('#modalEdit').modal('show');
+		$.ajax({
 			type: "POST",
 			url: "<?php echo base_url('jabatan/tampil_byid') ?>",
 			async: true,
@@ -375,7 +352,7 @@ if ($("#formEdit").length > 0) {
 				$('#e_nama').val(data[0].nama);
 			}
 		});
-    });
+	});
 
     $('#show_data').on('click','.item_hapus',function(){
         var id    = $(this).data('id');
@@ -411,4 +388,33 @@ if ($("#formEdit").length > 0) {
 		})
     })
 
+
+	//Simpan guru
+	// $('#btn_simpan1').on('click', function() {
+	// 	var id = $('#id').val();
+	// 	var nama = $('#nama').val();
+	// 	$.ajax({
+	// 		type: "POST",
+	// 		url: "<?php echo base_url('jabatan/simpan_jabatan') ?>",
+	// 		dataType: "JSON",
+	// 		data: {
+	// 			id: id,
+	// 			nama: nama,
+	// 		},
+	// 		success: function(response) {
+	// 			if(response == true){
+	// 				swalInputSuccess();
+	// 				show_data();
+	// 				$('[name="id"]').val("");
+	// 				$('[name="nama"]').val("");
+	// 				$('#modalTambah').modal('hide');
+	// 			}else if(response == 1048){
+	// 				swalIdDouble('ID Jabatan Sudah digunakan!');
+	// 			}else{
+	// 				swalInputFailed();
+	// 			}
+	// 		}
+	// 	});
+	// 	return false;
+	// });
 </script>
