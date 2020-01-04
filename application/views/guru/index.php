@@ -157,6 +157,7 @@
 				riwayat_sertifikasi: riwayat_sertifikasi,
 			},
 			success: function(data) {
+				alert(data);
 				$('#my-modal').modal('hide');
 				swalSuccess();
 				show_data();
