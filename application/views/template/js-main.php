@@ -45,7 +45,7 @@
 
 
 <script type="text/javascript">
-  function swalInputSuccess(){
+	function swalInputSuccess(){
 		Swal.fire({
 		  icon: 'success',
 		  title: 'Sukses',
@@ -61,6 +61,22 @@
 		});
 	}
 
+	function swalEditSuccess(){
+		Swal.fire({
+		  icon: 'success',
+		  title: 'Sukses',
+		  text: 'Ubah Data Berhasil',
+		});
+	}
+
+	function swalEditFailed(){
+		Swal.fire({
+		  icon: 'error',
+		  title: 'Gagal',
+		  text: 'Ubah Data gagal!',
+		});
+	}
+
 	function swalIdDouble(message){
 		Swal.fire({
 		  icon: 'error',
@@ -68,6 +84,16 @@
 		  text: message,
 		});
 	}
+
+	function swalDeleteSuccess(){
+		Swal.fire({
+		  icon: 'success',
+		  title: 'Sukses',
+		  text: 'Tambah Data Berhasil',
+		});
+	}
+
+
 </script>
 
 <!-- inline scripts related to this page -->

@@ -6,6 +6,7 @@ class Model_jabatan extends CI_model{
     }
     
     public function viewOrdering($table,$order,$ordering){
+        $this->db->where('isdeleted !=', 1);
         $this->db->order_by($order,$ordering);
         return $this->db->get($table);
     }

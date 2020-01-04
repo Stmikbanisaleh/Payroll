@@ -52,8 +52,21 @@ class Jabatan extends CI_Controller {
             $action = $this->model_jabatan->insert($data,'jabatan');
             echo json_encode($action);
         }else{
-            echo json_encode(1048);
+            echo json_encode(401);
         }
+        
+    }
+
+    public function update_jabatan()
+    {
+        $data_id = array(
+            'id'  => $this->input->post('e_id')
+        );
+        $data = array(
+            'nama'  => $this->input->post('e_nama'),
+        );
+        $action = $this->model_jabatan->update($data_id,$data,'jabatan');
+        echo json_encode($action);
         
     }
 }
