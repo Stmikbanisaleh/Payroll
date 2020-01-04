@@ -20,6 +20,12 @@ class Model_jabatan extends CI_model{
         $this->db->where($data);
         return $this->db->get($table);
     }
+
+    public function view_count($table,$data_id){
+        $this->db->where($data_id);
+        $hasil = $this->db->get($table);
+        return $hasil->num_rows();
+    }
       
     public function insert($data, $table){
         $result = $this->db->insert($table, $data);
