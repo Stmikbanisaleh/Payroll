@@ -167,40 +167,39 @@
 	   validClass: "my-valid-class",
 	    rules: {
 	      id: {
-	        required: true,
-	        maxlength: 50
+	        required: true
+	        // ,maxlength: 50
 	      },
 	  
 	   nama: {
 	        required: true
-	        // ,
-	        // digits:true,
+	        // , digits:true,
 	        // minlength: 10,
 	        // maxlength:12,
 	    },
-	    email: {
-	            required: true,
-	            maxlength: 50,
-	            email: true,
-	        },    
+	    // email: {
+	    //         required: true,
+	    //         maxlength: 50,
+	    //         email: true,
+	    //     },    
 	    },
 	    messages: {
 	        
-	      name: {
-	        required: "Please enter name",
-	        maxlength: "Your last name maxlength should be 50 characters long."
+	      id: {
+	        required: "Kode jabatan harus diisi!"
+	        // ,maxlength: "Your last name maxlength should be 50 characters long."
 	      },
-	      mobile_number: {
-	        required: "Please enter contact number",
-	        minlength: "The contact number should be 10 digits",
-	        digits: "Please enter only numbers",
-	        maxlength: "The contact number should be 12 digits",
+	      nama: {
+	        required: "Nama jabatan harus diisi!"
+	        // ,minlength: "The contact number should be 10 digits",
+	        // digits: "Please enter only numbers",
+	        // maxlength: "The contact number should be 12 digits",
 	      },
-	      email: {
-	          required: "Please enter valid email",
-	          email: "Please enter valid email",
-	          maxlength: "The email name should less than or equal to 50 characters",
-	        },
+	      // email: {
+	      //     required: "Please enter valid email",
+	      //     email: "Please enter valid email",
+	      //     maxlength: "The email name should less than or equal to 50 characters",
+	      //   },
 	         
 	    },
 	    submitHandler: function(form) {
@@ -211,19 +210,12 @@
 	        data: $('#formTambah').serialize(),
 	        dataType: "json",
 	        success: function( response ) {
-	            // console.log(response);
-	            // console.log(response.success);
-	            $('#formTambah').html('Submit');
-	            // $('#res_message').html(response.msg);
-	            // $('#res_message').show();
-	            // $('#msg_div').removeClass('d-none');
-	 
+	            $('#btn_simpan').html('<i class="ace-icon fa fa-save"></i>'+
+					'Simpan');
 	            document.getElementById("formTambah").reset(); 
 	            if(response == true){
 					swalInputSuccess();
 					show_data();
-					// $('[name="id"]').val("");
-					// $('[name="nama"]').val("");
 					$('#modalTambah').modal('hide');
 				}else if(response == 1048){
 					swalIdDouble('ID Jabatan Sudah digunakan!');
@@ -323,33 +315,33 @@
 
 
 	//Simpan guru
-	$('#btn_simpan1').on('click', function() {
-		var id = $('#id').val();
-		var nama = $('#nama').val();
-		$.ajax({
-			type: "POST",
-			url: "<?php echo base_url('jabatan/simpan_jabatan') ?>",
-			dataType: "JSON",
-			data: {
-				id: id,
-				nama: nama,
-			},
-			success: function(response) {
-				if(response == true){
-					swalInputSuccess();
-					show_data();
-					$('[name="id"]').val("");
-					$('[name="nama"]').val("");
-					$('#modalTambah').modal('hide');
-				}else if(response == 1048){
-					swalIdDouble('ID Jabatan Sudah digunakan!');
-				}else{
-					swalInputFailed();
-				}
-			}
-		});
-		return false;
-	});
+	// $('#btn_simpan1').on('click', function() {
+	// 	var id = $('#id').val();
+	// 	var nama = $('#nama').val();
+	// 	$.ajax({
+	// 		type: "POST",
+	// 		url: "<?php echo base_url('jabatan/simpan_jabatan') ?>",
+	// 		dataType: "JSON",
+	// 		data: {
+	// 			id: id,
+	// 			nama: nama,
+	// 		},
+	// 		success: function(response) {
+	// 			if(response == true){
+	// 				swalInputSuccess();
+	// 				show_data();
+	// 				$('[name="id"]').val("");
+	// 				$('[name="nama"]').val("");
+	// 				$('#modalTambah').modal('hide');
+	// 			}else if(response == 1048){
+	// 				swalIdDouble('ID Jabatan Sudah digunakan!');
+	// 			}else{
+	// 				swalInputFailed();
+	// 			}
+	// 		}
+	// 	});
+	// 	return false;
+	// });
 
 
 </script>
