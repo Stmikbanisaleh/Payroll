@@ -56,17 +56,33 @@ class Guru extends CI_Controller
 	}
 
 	public function tampil_byid()
-    {
-        $data = array(
-            'id'  => $this->input->post('id'),
-        );
-        $my_data = $this->model_guru->view_where('guru',$data)->result();
-        echo json_encode($my_data);
+	{
+		$data = array(
+			'id'  => $this->input->post('id'),
+		);
+		$my_data = $this->model_guru->view_where('guru', $data)->result();
+		echo json_encode($my_data);
 	}
-	
+
 	public function tampil_guru()
 	{
 		$my_data = $this->model_guru->view('guru')->result_array();
 		echo json_encode($my_data);
+	}
+
+	public function update_guru()
+	{
+		$data_id = array(
+			'id'  => $this->input->post('id')
+		);
+		$data = array(
+			'nama'  => $this->input->post('nama'),
+			'email'  => $this->input->post('email'),
+			'alamat'  => $this->input->post('alamat'),
+			'telepon'  => $this->input->post('telepon'),
+			'nik'  => $this->input->post('nik'),
+		);
+		$action = $this->model_guru->update($data_id, $data, 'guru');
+		echo json_encode($action);
 	}
 }

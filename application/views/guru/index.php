@@ -94,11 +94,12 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<!-- PAGE CONTENT BEGINS -->
-						<form class="form-horizontal" role="form" id="formTambah">
+						<form class="form-horizontal" role="form" id="formEdit">
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> NIK </label>
 								<div class="col-sm-6">
-									<input type="text" id="nik" required name="nik" id="form-field-1" placeholder="NIK" class="form-control" />
+									<input type="hidden" id="id" required name="id" placeholder="id" class="form-control" />
+									<input type="text" id="nik" required name="nik" placeholder="NIK" class="form-control" />
 								</div>
 							</div>
 
@@ -144,9 +145,9 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="submit" id="btn_simpan" class="btn btn-sm btn-success pull-left">
+				<button type="submit" id="btn_update" class="btn btn-sm btn-success pull-left">
 					<i class="ace-icon fa fa-save"></i>
-					Simpan
+					Update
 				</button>
 				<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
 					<i class="ace-icon fa fa-times"></i>
@@ -241,6 +242,66 @@
 		});
 	}
 
+	if ($("#formEdit").length > 0) {
+		$("#formEdit").validate({
+			errorClass: "my-error-class",
+			validClass: "my-valid-class",
+			rules: {
+				nama: {
+					required: true,
+				},
+				telepon: {
+					required: true,
+					digits: true,
+					maxlength: 14,
+					minlength: 10,
+				},
+				alamat: {
+					required: true,
+					minlength: 10,
+				},
+				email: {
+					required: true,
+					email: true,
+				},
+			},
+			messages: {
+				nama: {
+					required: "Nama Guru harus diisi!"
+				},
+				telepon: {
+					required: "Telepon harus diisi!"
+				},
+				alamat: {
+					required: "Harap Masukan alamat dengan benar!"
+				},
+			},
+			submitHandler: function(form) {
+				$.ajax({
+					type: "POST",
+					url: "<?php echo base_url('guru/update_guru') ?>",
+					dataType: "JSON",
+					data: $('#formEdit').serialize(),
+					success: function(data) {
+						$('#modalEdit').modal('hide');
+						if (data == 1) {
+							document.getElementById("formEdit").reset();
+							swalEditSuccess();
+							show_data();
+						} else if (data == 401) {
+							document.getElementById("formEdit").reset();
+							swalIdDouble();
+						} else {
+							document.getElementById("formEdit").reset();
+							swalEditFailed();
+						}
+					}
+				});
+				return false;
+			}
+		});
+	}
+
 	$(document).ready(function() {
 		show_data();
 		$('#datatable_tabletools').DataTable();
@@ -261,8 +322,13 @@
 				id: id,
 			},
 			success: function(data) {
-				// $('[name="id"]').val(data[0].id);
+				$('[name="id"]').val(data[0].id);
 				$('[name="nama"]').val(data[0].nama);
+				$('[name="nik"]').val(data[0].nik);
+				$('[name="telepon"]').val(data[0].telepon);
+				$('[name="alamat"]').val(data[0].alamat);
+				$('[name="email"]').val(data[0].email);
+
 			}
 		});
 	});

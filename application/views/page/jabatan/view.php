@@ -19,12 +19,6 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<!-- PAGE CONTENT BEGINS -->
-<<<<<<< HEAD
-
-=======
-							
->>>>>>> b3abebd49f79307e93722dcf216c9408a809152a
-
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Kode Jabatan </label>
 									<div class="col-sm-6">

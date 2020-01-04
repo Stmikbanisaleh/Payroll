@@ -5,7 +5,7 @@ class Model_guru extends CI_model
 
     public function view()
     {
-        return  $this->db->query('select g.*, j.nama as nama_jabatan from guru g join jabatan j on g.jabatan = j.id where isdeleted != 1 ');
+        return  $this->db->query('select g.*, j.nama as nama_jabatan from guru g join jabatan j on g.jabatan = j.id where g.isdeleted != 1 ');
     }
 
     public function viewOrdering($table, $order, $ordering)
