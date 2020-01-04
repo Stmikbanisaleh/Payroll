@@ -85,4 +85,18 @@ class Guru extends CI_Controller
 		$action = $this->model_guru->update($data_id, $data, 'guru');
 		echo json_encode($action);
 	}
+
+	public function delete_guru()
+    {
+        $data_id = array(
+            'id'  => $this->input->post('id')
+        );
+        $data = array(
+            'isdeleted'  => 1,
+        );
+		$action = $this->model_guru->update($data_id,$data,'guru');
+		print_r($this->db->last_query());exit;
+        echo json_encode($action);
+        
+    }
 }

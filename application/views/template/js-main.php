@@ -89,7 +89,7 @@
 		Swal.fire({
 		  icon: 'success',
 		  title: 'Sukses',
-		  text: 'Tambah Data Berhasil',
+		  text: 'Hapus Data Berhasil',
 		});
 	}
 
