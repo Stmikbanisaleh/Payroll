@@ -25,6 +25,15 @@
 <link rel="stylesheet" href="<?= base_url() ?>assets/template/css/ace-skins.min.css" />
 <link rel="stylesheet" href="<?= base_url() ?>assets/template/css/ace-rtl.min.css" />
 
+<style type="text/css">
+	.my-error-class {
+    color:#FF0000;  /* red */
+}
+.my-valid-class {
+    color:#00CC00; /* green */
+}
+</style>
+
 <!--[if lte IE 9]>
   <link rel="stylesheet" href="<?= base_url() ?>assets/template/css/ace-ie.min.css" />
 <![endif]-->

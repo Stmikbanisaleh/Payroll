@@ -38,8 +38,14 @@
 
 <!-- Sweet alert2 -->
 <script src="<?= base_url() ?>assets/template/sweetalert2/sweetalert2.all.min.js"></script>
+
+<!-- Validate -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
+
+
 <script type="text/javascript">
-  function swalSuccess(){
+  function swalInputSuccess(){
 		Swal.fire({
 		  icon: 'success',
 		  title: 'Sukses',
@@ -47,11 +53,19 @@
 		});
 	}
 
-	function swalFailed(){
+	function swalInputFailed(){
 		Swal.fire({
 		  icon: 'error',
 		  title: 'Gagal',
 		  text: 'Tambah Data gagal!',
+		});
+	}
+
+	function swalIdDouble(message){
+		Swal.fire({
+		  icon: 'error',
+		  title: 'Gagal',
+		  text: message,
 		});
 	}
 </script>
