@@ -239,7 +239,7 @@
 						swalInputSuccess();
 						show_data();
 						$('#modalTambah').modal('hide');
-					}else if(response == 1048){
+					}else if(response == 401){
 						swalIdDouble('Kode Jabatan Sudah digunakan!');
 					}else{
 						swalInputFailed();
@@ -328,7 +328,7 @@ if ($("#formEdit").length > 0) {
 						'<button  href="#my-modal-edit" class="btn btn-xs btn-info item_edit" title="Edit" data-id="' + data[i].id + '">'+
 							'<i class="ace-icon fa fa-pencil bigger-120"></i>'+
 						'</button> &nbsp'+
-						'<button class="btn btn-xs btn-danger item_hapus" title="Delete" data-kode="' + data[i].id + '">'+
+						'<button class="btn btn-xs btn-danger item_hapus" title="Delete" data-id="' + data[i].id + '">'+
 							'<i class="ace-icon fa fa-trash-o bigger-120"></i>'+
 						'</button>'+
 						'</td>' +
@@ -386,47 +386,29 @@ if ($("#formEdit").length > 0) {
 		  showCancelButton: true,
 		  confirmButtonColor: '#3085d6',
 		  cancelButtonColor: '#d33',
-		  confirmButtonText: 'Yes, delete it!'
+		  confirmButtonText: 'Ya, Hapus!',
+		  cancelButtonText: 'Batal'
 		}).then((result) => {
 		  if (result.value) {
-		    Swal.fire(
-		      'Deleted!',
-		      'Your file has been deleted.',
-		      'success'
-		    )
+		  	$.ajax({
+				type: "POST",
+				url: "<?php echo base_url('jabatan/delete_jabatan') ?>",
+				async: true,
+				dataType: "JSON",
+				data: {
+					id: id,
+				},
+				success: function(data) {
+					show_data();
+					Swal.fire(
+				      'Terhapus!',
+				      'Data sudah dihapus.',
+				      'success'
+				    )
+				}
+			});
 		  }
 		})
     })
-
-
-	//Simpan guru
-	// $('#btn_simpan1').on('click', function() {
-	// 	var id = $('#id').val();
-	// 	var nama = $('#nama').val();
-	// 	$.ajax({
-	// 		type: "POST",
-	// 		url: "<?php echo base_url('jabatan/simpan_jabatan') ?>",
-	// 		dataType: "JSON",
-	// 		data: {
-	// 			id: id,
-	// 			nama: nama,
-	// 		},
-	// 		success: function(response) {
-	// 			if(response == true){
-	// 				swalInputSuccess();
-	// 				show_data();
-	// 				$('[name="id"]').val("");
-	// 				$('[name="nama"]').val("");
-	// 				$('#modalTambah').modal('hide');
-	// 			}else if(response == 1048){
-	// 				swalIdDouble('ID Jabatan Sudah digunakan!');
-	// 			}else{
-	// 				swalInputFailed();
-	// 			}
-	// 		}
-	// 	});
-	// 	return false;
-	// });
-
 
 </script>

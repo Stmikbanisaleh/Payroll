@@ -24,6 +24,7 @@ class Model_jabatan extends CI_model{
 
     public function view_count($table,$data_id){
         $this->db->where($data_id);
+        $this->db->where('isdeleted !=', 1);
         $hasil = $this->db->get($table);
         return $hasil->num_rows();
     }
