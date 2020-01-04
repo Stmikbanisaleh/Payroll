@@ -41,7 +41,7 @@ class Jabatan extends CI_Controller {
     public function simpan_jabatan()
     {
         $data_id = array(
-            'id'  => $this->input->post('id')
+            'nama'  => $this->input->post('nama')
         );
         $count_id = $this->model_jabatan->view_count('jabatan', $data_id);
         if($count_id<1){
