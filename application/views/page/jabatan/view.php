@@ -212,8 +212,8 @@
 	        success: function( response ) {
 	            $('#btn_simpan').html('<i class="ace-icon fa fa-save"></i>'+
 					'Simpan');
-	            document.getElementById("formTambah").reset(); 
 	            if(response == true){
+	            	document.getElementById("formTambah").reset(); 
 					swalInputSuccess();
 					show_data();
 					$('#modalTambah').modal('hide');
