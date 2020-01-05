@@ -21,12 +21,12 @@
 							<!-- PAGE CONTENT BEGINS -->
 							
 
-								<div class="form-group">
+								<!-- <div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Kode Jabatan </label>
 									<div class="col-sm-6">
 										<input type="text" id="id" name="id" id="form-field-1" placeholder="Kode Jabatan" class="form-control" />
 									</div>
-								</div>
+								</div> -->
 
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nama Jabatan </label>
@@ -88,9 +88,9 @@
 							
 
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Kode Jabatan </label>
+									<!-- <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Kode Jabatan </label> -->
 									<div class="col-sm-6">
-										<input type="text" id="e_id" name="e_id" id="form-field-1" placeholder="Kode Jabatan" class="form-control" />
+										<input type="hidden" id="e_id" name="e_id" id="form-field-1" placeholder="Kode Jabatan" class="form-control" />
 									</div>
 								</div>
 
@@ -100,27 +100,6 @@
 										<input type="text" id="e_nama" name="e_nama" placeholder="Nama Jabatan" class="form-control" />
 									</div>
 								</div>
-								
-							      <!-- <div class="form-group">
-							        <label for="formGroupExampleInput">Name</label>
-							        <input type="text" name="name" class="form-control" id="formGroupExampleInput" placeholder="Please enter name">
-							      </div>
-							 
-							      <div class="form-group">
-							        <label for="email">Email Id</label>
-							        <input type="text" name="email" class="form-control" id="email" placeholder="Please enter email id">
-							      </div>   
-							 
-							      <div class="form-group">
-							        <label for="mobile_number">Mobile Number</label>
-							        <input type="text" name="mobile_number" class="form-control" id="mobile_number" placeholder="Please enter mobile number" maxlength="10">
-							      </div> -->
-							 
-							      <!-- <div class="form-group">
-							       <button type="submit" id="send_form" class="btn btn-success">Submit</button>
-							      </div>
-							    
-							 -->
 						</div>
 					</div>
 				</div>
@@ -150,10 +129,10 @@
 <table id="table_id" class="display">
 	<thead>
 		<tr>
-			<th class="col-md-1">No</th>
-			<th>Kode Jabatan</th>
-			<th>Nama Jabatan</th>
-			<th>Action</th>
+			<th class="col-md-1 text-center">No</th>
+			<!-- <th>Kode Jabatan</th> -->
+			<th class="text-center">Nama Jabatan</th>
+			<th class="text-center">Action</th>
 		</tr>
 	</thead>
 	<tbody id="show_data">
@@ -165,10 +144,10 @@
 		   errorClass: "my-error-class",
 		   validClass: "my-valid-class",
 		    rules: {
-		      id: {
-		        required: true
-		        // ,maxlength: 50
-		      },
+		      // id: {
+		      //   required: true
+		      //   // ,maxlength: 50
+		      // },
 		  
 		   nama: {
 		        required: true
@@ -184,10 +163,10 @@
 		    },
 		    messages: {
 		        
-		      id: {
-		        required: "Kode jabatan harus diisi!"
-		        // ,maxlength: "Your last name maxlength should be 50 characters long."
-		      },
+		      // id: {
+		      //   required: "Kode jabatan harus diisi!"
+		      //   // ,maxlength: "Your last name maxlength should be 50 characters long."
+		      // },
 		      nama: {
 		        required: "Nama jabatan harus diisi!"
 		        // ,minlength: "The contact number should be 10 digits",
@@ -236,18 +215,12 @@ if ($("#formEdit").length > 0) {
 	   errorClass: "my-error-class",
 	   validClass: "my-valid-class",
 	    rules: {
-			e_id: {
-				required: true
-			},
 			e_nama: {
 			    required: true
 			}, 
 	    },
 	    messages: {
-	        
-			e_id: {
-				required: "Kode jabatan harus diisi!"
-			},
+
 			e_nama: {
 				required: "Nama jabatan harus diisi!"
 			},
@@ -298,8 +271,8 @@ if ($("#formEdit").length > 0) {
 				var no = 1;
 				for (i = 0; i < data.length; i++) {
 					html += '<tr>' +
+						// '<td class="text-center">' + no + '</td>' +
 						'<td class="text-center">' + no + '</td>' +
-						'<td class="text-center">' + data[i].id + '</td>' +
 						'<td>' + data[i].nama + '</td>' +
 						'<td class="text-center">' +
 						'<button  href="#my-modal-edit" class="btn btn-xs btn-info item_edit" title="Edit" data-id="' + data[i].id + '">'+

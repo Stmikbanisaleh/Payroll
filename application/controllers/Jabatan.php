@@ -46,7 +46,7 @@ class Jabatan extends CI_Controller {
         $count_id = $this->model_jabatan->view_count('jabatan', $data_id);
         if($count_id<1){
             $data = array(
-                'id'  => $this->input->post('id'),
+                // 'id'  => $this->input->post('id'),
                 'nama'  => $this->input->post('nama'),
                 'createdAt' => date('Y-m-d H:i:s'),
             );
