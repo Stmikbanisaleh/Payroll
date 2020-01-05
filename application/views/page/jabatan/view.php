@@ -337,6 +337,7 @@ if ($("#formEdit").length > 0) {
 
 	//get data for update record
 	$('#show_data').on('click', '.item_edit', function() {
+		document.getElementById("formEdit").reset();
 		var id = $(this).data('id');
 		$('#modalEdit').modal('show');
 		$.ajax({
