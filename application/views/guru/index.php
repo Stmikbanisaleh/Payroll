@@ -98,22 +98,22 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> NIK </label>
 								<div class="col-sm-6">
-									<input type="hidden" id="id" required name="id" placeholder="id" class="form-control" />
-									<input type="text" id="nik" required name="nik" placeholder="NIK" class="form-control" />
+									<input type="hidden" id="e_id" required name="e_id" placeholder="id" class="form-control" />
+									<input type="text" id="e_nik" required name="e_nik" placeholder="NIK" class="form-control" />
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nama </label>
 								<div class="col-sm-9">
-									<input type="text" id="nama" required name="nama" placeholder="Nama Guru" class="form-control" />
+									<input type="text" id="e_nama" required name="e_nama" placeholder="Nama Guru" class="form-control" />
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Jabatan </label>
 								<div class="col-sm-9">
-									<select class="form-control" name="jabatan" id="jabatan">
+									<select class="form-control" name="e_jabatan" id="e_jabatan">
 										<?php foreach ($myjabatan as $value) { ?>
 											<option value=<?= $value['id'] ?>><?= $value['nama'] ?></option>
 										<?php } ?>
@@ -124,21 +124,21 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Telepon </label>
 								<div class="col-sm-9">
-									<input type="text" id="telepon" required name="telepon" placeholder="No Telp" class="form-control" />
+									<input type="text" id="e_telepon" required name="e_telepon" placeholder="No Telp" class="form-control" />
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Alamat </label>
 								<div class="col-sm-9">
-									<textarea class="form-control" required name="alamat" id="alamat" placeholder="Masukan Alamat"></textarea>
+									<textarea class="form-control" required name="e_alamat" id="e_alamat" placeholder="Masukan Alamat"></textarea>
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Email </label>
 								<div class="col-sm-9">
-									<textarea class="form-control" name="email" id="email" placeholder="Email"></textarea>
+									<textarea class="form-control" name="e_email" id="e_email" placeholder="Email"></textarea>
 								</div>
 							</div>
 					</div>
@@ -351,12 +351,12 @@
 				id: id,
 			},
 			success: function(data) {
-				$('[name="id"]').val(data[0].id);
-				$('[name="nama"]').val(data[0].nama);
-				$('[name="nik"]').val(data[0].nik);
-				$('[name="telepon"]').val(data[0].telepon);
-				$('[name="alamat"]').val(data[0].alamat);
-				$('[name="email"]').val(data[0].email);
+				$('[name="e_id"]').val(data[0].id);
+				$('[name="e_nama"]').val(data[0].nama);
+				$('[name="e_nik"]').val(data[0].nik);
+				$('[name="e_telepon"]').val(data[0].telepon);
+				$('[name="e_alamat"]').val(data[0].alamat);
+				$('[name="e_email"]').val(data[0].email);
 
 			}
 		});
@@ -385,7 +385,7 @@
 						'<button  href="#my-modal-edit" class="btn btn-xs btn-info item_edit" title="Edit" data-id="' + data[i].id + '">' +
 						'<i class="ace-icon fa fa-pencil bigger-120"></i>' +
 						'</button> &nbsp' +
-						'<button class="btn btn-xs btn-danger item_hapus" title="Delete" data-kode="' + data[i].id + '">' +
+						'<button class="btn btn-xs btn-danger item_hapus" title="Delete" data-id="' + data[i].id + '">' +
 						'<i class="ace-icon fa fa-trash-o bigger-120"></i>' +
 						'</button>' +
 						'</td>' +

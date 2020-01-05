@@ -73,14 +73,14 @@ class Guru extends CI_Controller
 	public function update_guru()
 	{
 		$data_id = array(
-			'id'  => $this->input->post('id')
+			'id'  => $this->input->post('e_id')
 		);
 		$data = array(
-			'nama'  => $this->input->post('nama'),
-			'email'  => $this->input->post('email'),
-			'alamat'  => $this->input->post('alamat'),
-			'telepon'  => $this->input->post('telepon'),
-			'nik'  => $this->input->post('nik'),
+			'nama'  => $this->input->post('e_nama'),
+			'email'  => $this->input->post('e_email'),
+			'alamat'  => $this->input->post('e_alamat'),
+			'telepon'  => $this->input->post('e_telepon'),
+			'nik'  => $this->input->post('e_nik'),
 		);
 		$action = $this->model_guru->update($data_id, $data, 'guru');
 		echo json_encode($action);
@@ -95,7 +95,6 @@ class Guru extends CI_Controller
             'isdeleted'  => 1,
         );
 		$action = $this->model_guru->update($data_id,$data,'guru');
-		print_r($this->db->last_query());exit;
         echo json_encode($action);
         
     }

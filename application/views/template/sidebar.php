@@ -1,5 +1,7 @@
 <script type="text/javascript">
-	try{ace.settings.loadState('sidebar')}catch(e){}
+	try {
+		ace.settings.loadState('sidebar')
+	} catch (e) {}
 </script>
 
 <div class="sidebar-shortcuts" id="sidebar-shortcuts">
@@ -44,36 +46,9 @@
 
 	<li class="">
 		<a href="javascript:void(0);" class="dropdown-toggle">
-			<i class="menu-icon fa fa-credit-card"></i>
-			<span class="menu-text">
-				Teacher's Bio
-			</span>
-		</a>
-	</li>
-
-	<li class="">
-		<a href="javascript:void(0);" class="dropdown-toggle">
-			<i class="menu-icon fa fa-users"></i>
-			<span class="menu-text">
-				Employee
-			</span>
-		</a>
-	</li>
-
-	<li class="">
-		<a href="javascript:void(0);" class="dropdown-toggle">
-			<i class="menu-icon glyphicon glyphicon-refresh"></i>
-			<span class="menu-text">
-				Syncronize
-			</span>
-		</a>
-	</li>
-
-	<li class="active">
-		<a href="javascript:void(0);" class="dropdown-toggle">
 			<i class="menu-icon glyphicon glyphicon-download"></i>
 			<span class="menu-text">
-				Master Data
+				Master User
 			</span>
 
 			<b class="arrow fa fa-angle-down"></b>
@@ -84,14 +59,14 @@
 		<ul class="submenu">
 
 			<li class="">
-				<a href="<?= base_url().'guru';?>">
+				<a href="<?= base_url() . 'guru'; ?>">
 					<i class="menu-icon fa fa-caret-right"></i>
 					Guru
 				</a>
 			</li>
 
 			<li class="">
-				<a href="<?= base_url().'karyawan'; ?>">
+				<a href="<?= base_url() . 'karyawan'; ?>">
 					<i class="menu-icon fa fa-caret-right"></i>
 					Karyawan
 				</a>
@@ -100,7 +75,7 @@
 			</li>
 
 			<li class="">
-				<a href="<?= base_url().'jabatan'; ?>">
+				<a href="<?= base_url() . 'jabatan'; ?>">
 					<i class="menu-icon fa fa-caret-right"></i>
 					Jabatan
 				</a>
@@ -116,7 +91,58 @@
 
 				<b class="arrow"></b>
 			</li>
-			
+
+		</ul>
+	</li>
+
+	<li class="">
+		<a href="javascript:void(0);" class="dropdown-toggle">
+			<i class="menu-icon fa fa-money"></i>
+			<span class="menu-text">
+				Master Tarif
+			</span>
+
+			<b class="arrow fa fa-angle-down"></b>
+		</a>
+
+		<b class="arrow"></b>
+
+		<ul class="submenu">
+
+			<li class="">
+				<a href="<?= base_url() . 'guru'; ?>">
+					<i class="menu-icon fa fa-caret-right"></i>
+					Guru
+				</a>
+			</li>
+
+			<li class="">
+				<a href="<?= base_url() . 'karyawan'; ?>">
+					<i class="menu-icon fa fa-caret-right"></i>
+					Karyawan
+				</a>
+
+				<b class="arrow"></b>
+			</li>
+
+			<li class="">
+				<a href="<?= base_url() . 'jabatan'; ?>">
+					<i class="menu-icon fa fa-caret-right"></i>
+					Jabatan
+				</a>
+
+				<b class="arrow"></b>
+			</li>
+
+			<li class="">
+				<a href="typography.html">
+					<i class="menu-icon fa fa-caret-right"></i>
+					Role
+				</a>
+
+				<b class="arrow"></b>
+			</li>
+
 		</ul>
 	</li>
 
@@ -124,7 +150,7 @@
 		<a href="javascript:void(0);" class="dropdown-toggle">
 			<i class="menu-icon glyphicon glyphicon-upload"></i>
 			<span class="menu-text">
-				Deduction
+				Master TU
 			</span>
 
 			<b class="arrow fa fa-angle-down"></b>
@@ -151,20 +177,82 @@
 
 				<b class="arrow"></b>
 			</li>
-			
+
 		</ul>
+	</li>
+
+	<li class="">
+		<a href="javascript:void(0);" class="dropdown-toggle">
+			<i class="menu-icon glyphicon glyphicon-upload"></i>
+			<span class="menu-text">
+				Master Akuntansi
+			</span>
+
+			<b class="arrow fa fa-angle-down"></b>
+		</a>
+
+		<b class="arrow"></b>
+
+		<ul class="submenu">
+
+			<li class="">
+				<a href="typography.html">
+					<i class="menu-icon fa fa-caret-right"></i>
+					Employee
+				</a>
+
+				<b class="arrow"></b>
+			</li>
+
+			<li class="">
+				<a href="typography.html">
+					<i class="menu-icon fa fa-caret-right"></i>
+					Teacher's
+				</a>
+
+				<b class="arrow"></b>
+			</li>
+
+		</ul>
+	</li>
+
+	<li class="">
+		<a href="javascript:void(0);" class="dropdown-toggle">
+			<i class="menu-icon fa fa-book"></i>
+			<span class="menu-text">
+				Laporan
+			</span>
+		</a>
+	</li>
+	
+	<li class="">
+		<a href="javascript:void(0);" class="dropdown-toggle">
+			<i class="menu-icon fa fa-info-circle"></i>
+			<span class="menu-text">
+				Transaksi
+			</span>
+		</a>
 	</li>
 
 	<li class="">
 		<a href="javascript:void(0);" class="dropdown-toggle">
 			<i class="menu-icon fa fa-info-circle"></i>
 			<span class="menu-text">
-				Serve / Leave
+				Transaksi Keuangan
 			</span>
 		</a>
 	</li>
 
-	
+	<li class="">
+		<a href="javascript:void(0);" class="dropdown-toggle">
+			<i class="menu-icon fa fa-info-circle"></i>
+			<span class="menu-text">
+				Laporan Keuangan
+			</span>
+		</a>
+	</li>
+
+
 </ul><!-- /.nav-list -->
 
 <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
