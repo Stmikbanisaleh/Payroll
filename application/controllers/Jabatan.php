@@ -16,7 +16,7 @@ class Jabatan extends CI_Controller {
 
 	public function index() {
         $data = array(
-                    'page_content'  => 'jabatan/view',
+                    'page_content'  => 'jabatan/index',
                     'ribbon'        => '<li class="active">Jabatan</li>',
                     'page_name'     => 'Jabatan'
                 );
