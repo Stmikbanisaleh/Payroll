@@ -12,7 +12,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h3 class="smaller lighter blue no-margin">Form Input Edit Data <?= $page_name; ?></h3>
+				<h3 class="smaller lighter blue no-margin">Form Input Data <?= $page_name; ?></h3>
 			</div>
 			<form class="form-horizontal" role="form" id="formTambah">
 				<div class="modal-body">
